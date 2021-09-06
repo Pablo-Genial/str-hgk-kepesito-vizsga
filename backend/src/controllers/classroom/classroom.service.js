@@ -11,7 +11,7 @@ exports.create = (requestData) => {
 
 exports.findAll = () => Model.find()
 
-exports.findOne = (id) => Model.findById(id)
+exports.findOne = (id) => Model.findById(id).populate('author')
 
 exports.update = (id, updateData) =>
   Model.findByIdAndUpdate(id, updateData, { new: true })
