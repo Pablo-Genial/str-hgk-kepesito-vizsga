@@ -1,14 +1,20 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-module.exports = mongoose.model('Building', {
+module.exports = mongoose.model(
+  'Building',
+  {
     name: {
-        type: String
+      type: String,
     },
     floors: {
-        type: Number
+      type: Number,
     },
-    classrooms: [{
+    classrooms: [
+      {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Classroom'
-    }]
-}, 'buildings');
+        ref: 'Classroom',
+      },
+    ],
+  },
+  'buildings'
+)
